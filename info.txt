@@ -1,0 +1,17 @@
+*DESDE MONGO SHELL*
+
+use crud;
+
+
+db.createUser(
+  {
+    user :  "mongoadmin",
+    pwd :  "123456",
+    roles :  [
+        {  role :  "readWrite",  db :  "crud"  }
+    ]
+  }
+);
+
+use admin
+db.auth("mongoadmin", "123456");
